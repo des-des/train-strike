@@ -4,20 +4,20 @@
     <link rel="stylesheet" href="https://unpkg.com/tachyons@4.7.0/css/tachyons.min.css"/>
     <link rel="stylesheet"  href="style.css"/>
   </head>
-  <body class="helvetica bg-light-silver">
+  <body class="helvetica bg-light-gray">
     <div class='overflow-hidden'>
       <div class="fl w-100 w-70-l">
         <header class="fl w-100 pa3 tc bg-blue white tracked">
           <span class="ttu">Add your voice</span>
         </header>
-
         <!--  Signature counter -->
-        <div class="fl w-100 pa3 tc bg-light-silver">
+        <div class="fl w-100 pa3 tc bg-light-gray">
           <span>Join the <span id="counter" class="link b">2049</span> others that have signed up</span>
         </div>
 
         <!-- Explanatory text -->
         <div class="fl w-100 min-h-100 pa3 pb6 lh-copy bg-white">
+
           <p>Trains in the UK are too expensive.</p>
 
           <p>Take action.</p>
@@ -30,25 +30,26 @@
         </div>
 
         <!-- Floating sign up button -->
-        <footer class="fl w-100 pa3 tc fixed bottom-0 bg-light-silver">
+        <footer class="fl w-100 pa3 tc fixed bottom-0 bg-light-gray">
           <a class="tracked f4 w-100 link dim br1 ph3 pv3 dib white bg-red ttu sign-me-modal__open-button" href="#0">Sign up</a>
         </footer>
       </div>
 
-      <div class='sign-me-modal tc w-100 bg-white'>
+      <div class='sign-me-modal w-100 pb3 bg-light-gray'>
         <img src='x.svg' class='fr w1 h1 pa3 sign-me-modal__close-button'></img>
         <div class='w-100 pa3'>
-          <input type='text' placeholder="name" class='w-100 pa3'/>
+          <input type='text' placeholder="Name" class='w-100 pa3'/>
         </div>
         <div class='w-100 pa3'>
-          <input type='text' placeholder="email" class='w-100 pa3'/>
+          <input type='text' placeholder="Email address" class='w-100 pa3'/>
         </div>
         <div class='w-100 pa3'>
-          <textarea placeholder="message" class='w-100 pa3 helvetica' rows='3'></textarea>
+          <textarea placeholder="Add an optional message" class='w-100 pa3 helvetica' rows='3'></textarea>
         </div>
-        <footer class="fl w-100 pa3 tc bg-light-silver">
-          <a class="tracked f4 w-100 link dim br1 ph3 pv3 dib white bg-red ttu" href="#0">submit</a>
-        </footer>
+        <div class="fl w-100 pa3 tc">
+          <a class="tracked f4 w-100 link dim br1 ph3 pv3 dib white bg-red ttu sign-me-modal__open-button" href="#0">submit</a>
+        </div>
+        <span class="ph3 f6 dib">We will never pass on your information. Take a look at our <a class="black link b hover-blue" href="#" target="_blank" title="View our privacy policy">privacy policy</a> for more details.</span>
       </div>
     </div>
     <script type="text/javascript" src='main.js'></script>
