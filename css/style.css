@@ -15,6 +15,22 @@
   bottom: 0;
 }
 
+.comments__inner {
+  transition: all 0.5s ease-in-out;
+}
+
+.comments__text::after {
+  content: close-quote;
+}
+
+.comments__text::before {
+  content: open-quote;
+}
+
+.comments__author::before {
+  content: '- ';
+}
+
 @media screen and (min-width: 60em) {
   .sign-me-modal {
     float: left;
