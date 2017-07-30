@@ -17,7 +17,7 @@ var trainStrike
 
   var submissions = data.ref('/submissions')
   var emails = data.ref('/emails')
-
+  var emails_count = data.ref('/emails_count')
 
   // Helpers //
   var firstOfClass = function(className) {
@@ -44,6 +44,10 @@ var trainStrike
     }, 500)
   }
 
+  var renderEmailCount = function(count) {
+    nodes.emailCount.textContent = count.toString() || 'many'
+  }
+
   // DOM nodes //
   var nodes = {
     modal: firstOfClass('sign-me-modal'),
@@ -53,6 +57,7 @@ var trainStrike
     commentsText: firstOfClass('comments__text'),
     commentsAuthor: firstOfClass('comments__author'),
     commentsInner: firstOfClass('comments__inner'),
+    emailCount: firstOfClass('email-count')
   }
 
 
@@ -84,6 +89,10 @@ var trainStrike
 
   submissions.limitToLast(1).on('child_added', function(snapshot) {
     renderComment(snapshot.val())
+  })
+
+  emails_count.on('value', function(snapshot) {
+    renderEmailCount(snapshot.val())
   })
 
 }())
