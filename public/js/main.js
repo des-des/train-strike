@@ -158,12 +158,14 @@ var trainStrike
       hideFormErrors()
     }
 
-    submissions.push({
+    var submissionId = uuidv4()
+
+    data.ref('/submissions/' + submissionId).set({
       name: name,
       comment: comment
     })
 
-    emails.push(email)
+    data.ref('/emails/' + submissionId).set(email)
 
     nodes.form.reset()
     closeModal()
