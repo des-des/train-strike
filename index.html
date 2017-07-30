@@ -5,10 +5,10 @@
     <link rel="stylesheet"  href="style.css"/>
   </head>
   <body class="helvetica bg-light-gray">
-    <div class='overflow-hidden'>
+    <div class='overflow-hidden min-vh-100 bg-white'>
       <div class="fl w-100 w-70-l">
         <header class="fl w-100 pa3 tc bg-blue white tracked">
-          <span class="ttu">Add your voice</span>
+          <span class="ttu">Trainstrike</span>
         </header>
         <!--  Signature counter -->
         <div class="fl w-100 pa3 tc bg-light-gray">
@@ -16,7 +16,7 @@
         </div>
 
         <!-- Explanatory text -->
-        <div class="fl w-100 min-h-100 pa3 pb6 lh-copy bg-white">
+        <div class="fl w-100 pa3 pb6 lh-copy bg-white">
 
           <p>Trains in the UK are too expensive.</p>
 
@@ -36,7 +36,10 @@
       </div>
 
       <div class='sign-me-modal w-100 pb3 bg-light-gray'>
-        <img src='x.svg' class='fr w1 h1 pa3 sign-me-modal__close-button'></img>
+        <img src='x.svg' class='absolute top-0 right-0 w1 h1 pa3 sign-me-modal__close-button'></img>
+        <header class="fl w-100 pa3 tc bg-red white tracked mb3">
+          <span class="ttu">Add your voice</span>
+        </header>
         <div class='w-100 pa3'>
           <input type='text' placeholder="Name" class='w-100 pa3'/>
         </div>

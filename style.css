@@ -30,4 +30,11 @@
   .sign-me-modal__open-button {
     display: none;
   }
+  .sign-me-modal__close-button {
+    display: none;
+  }
+
+  footer {
+    display: none;
+  }
 }
