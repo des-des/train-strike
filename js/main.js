@@ -1,3 +1,5 @@
+var trainStrike
+
 ;(function() {
 
   // Firebase setup //
@@ -23,6 +25,8 @@
     return result && result[0]
   }
 
+  var tag = document.createElement.bind(document)
+
   var openModal = function() {
     nodes.modal.classList.add('sign-me-modal--open')
   }
@@ -31,12 +35,19 @@
     nodes.modal.classList.remove('sign-me-modal--open')
   }
 
+  var renderComment = function(data) {
+    nodes.commentsAuthor = data.name
+    comment.commentsText = data.comment
+  }
+
   // DOM nodes //
   var nodes = {
     modal: firstOfClass('sign-me-modal'),
     openModalButton: firstOfClass('sign-me-modal__open-button'),
     closeModalButton: firstOfClass('sign-me-modal__close-button'),
-    form: firstOfClass('sign-me-modal__form')
+    form: firstOfClass('sign-me-modal__form'),
+    commentsText: firstOfClass('comments__text'),
+    commentsAuthor: firstOfClass('comments__author'),
   }
 
 
@@ -62,10 +73,12 @@
     })
 
     emails.push(email)
+
+    closeModal()
   })
 
-  submissions.on('value', function(snapshot) {
-    console.log(snapshot.val());
+  submissions.limitToLast(1).on('child_added', function(snapshot) {
+    renderComment(snapshot.val())
   })
 
 }())
