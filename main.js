@@ -19,4 +19,34 @@
   closeModalButton.addEventListener('click', function() {
     closeModal()
   })
+
+  var firebaseConfig = {
+    apiKey: "AIzaSyAmOWeoxK07P0d17ESvw126PRJGi5NmuPs",
+    authDomain: "train-strike.firebaseapp.com",
+    databaseURL: "https://train-strike.firebaseio.com",
+    projectId: "train-strike",
+    storageBucket: "",
+    messagingSenderId: "778542716200"
+  };
+  firebase.initializeApp(firebaseConfig);
+
+  var data = firebase.database()
+
+  var submissions = data.ref('/submissions')
+  var emails = data.ref('/emails')
+
+
+  submissions.push({
+    name: 'Eoin',
+    comment: 'God is great'
+  })
+
+  emails.push({
+    "email": '123@456'
+  })
+
+  submissions.on('value').then(function(snapshot) {
+    console.log(snapshot.val());
+  })
+
 }())
