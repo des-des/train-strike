@@ -5,7 +5,7 @@
   "main": "hapi_server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "html-inline -i index.html -o public/index.html"
+    "build": "node build_css.js && html-inline -i index.html -o public/index.html -b public"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/des-des/train-strike#readme",
   "dependencies": {
     "html-inline": "^1.2.0",
-    "tachyons": "^4.7.4"
+    "tachyons": "^4.7.4",
+    "tachyons-build-css": "^1.5.0"
   }
 }
