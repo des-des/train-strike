@@ -94,7 +94,7 @@ var trainStrike
   }
 
   var renderEmailCount = function(count) {
-    nodes.emailCount.textContent = count.toString() || 'many'
+    nodes.emailCount.textContent = count ? count.toString() : 'many'
   }
 
   var validateFormAndDisplayErrors = function(name, email) {
