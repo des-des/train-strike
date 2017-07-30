@@ -20,8 +20,8 @@ var trainStrike
 
 
   // Helpers //
-  var firstOfClass = function(className) {
-    var result = document.getElementsByClassName(className)
+  var firstOfClass = function(className, parent) {
+    var result = (parent || document).getElementsByClassName(className)
     return result && result[0]
   }
 
@@ -35,13 +35,61 @@ var trainStrike
     nodes.modal.classList.remove('sign-me-modal--open')
   }
 
-  var renderComment = function(data) {
-    nodes.commentsInner.classList.add('comments__inner--hidden')
+  var comment = function(nodeData) {
+    var self = {}
+
+    var node = nodes.commentsInner.cloneNode(true)
+    firstOfClass('comments__author', node).textContent = nodeData.name
+    firstOfClass('comments__text', node).textContent = nodeData.comment
+    node.classList.add('comments__inner--hidden')
+    node.style.top = '0px'
+    nodes.comments.insertBefore(node, nodes.comments.firstChild)
+
     setTimeout(function() {
-      nodes.commentsAuthor.textContent = data.name
-      nodes.commentsText.textContent = data.comment
-      nodes.commentsInner.classList.remove('comments__inner--hidden')
-    }, 500)
+      node.classList.remove('comments__inner--hidden')
+    }, 50)
+
+    console.log(node);
+
+    var moveDown = function () {
+      var top = node.style.top
+      var topNum = top
+        ? parseInt(top.slice(0, top.indexOf('px')), 10)
+        : 0
+
+      node.style.top = (topNum + 25) + 'px'
+    }
+    self.moveDown = moveDown
+
+    var deleteSelf = function() {
+      node.classList.add('comments__inner--hidden')
+      setTimeout(function() {
+        node.parentNode.removeChild(node)
+      }, 500)
+    }
+    self.deleteSelf = deleteSelf
+
+    return self
+  }
+
+  var comments = (function () {
+    var self = {}
+    var nodes = []
+
+    var addNode = function(nodeData) {
+      nodes.forEach(node => node.moveDown())
+      nodes.push(comment(nodeData))
+      if (nodes.length >= 4) {
+        nodes.shift().deleteSelf()
+      }
+    }
+    self.addNode = addNode
+
+    return self
+  })()
+
+  var renderComment = function(data) {
+    comments.addNode(data)
   }
 
   // DOM nodes //
@@ -50,6 +98,7 @@ var trainStrike
     openModalButton: firstOfClass('sign-me-modal__open-button'),
     closeModalButton: firstOfClass('sign-me-modal__close-button'),
     form: firstOfClass('sign-me-modal__form'),
+    comments: firstOfClass('comments'),
     commentsText: firstOfClass('comments__text'),
     commentsAuthor: firstOfClass('comments__author'),
     commentsInner: firstOfClass('comments__inner'),
