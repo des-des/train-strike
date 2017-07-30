@@ -1,0 +1,24 @@
+{
+  "name": "train-strike",
+  "version": "1.0.0",
+  "description": "train strike",
+  "main": "hapi_server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "html-inline -i index.html -o public/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/des-des/train-strike.git"
+  },
+  "author": "des-des, lukem512",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/des-des/train-strike/issues"
+  },
+  "homepage": "https://github.com/des-des/train-strike#readme",
+  "dependencies": {
+    "html-inline": "^1.2.0",
+    "tachyons": "^4.7.4"
+  }
+}
