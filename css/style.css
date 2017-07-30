@@ -21,7 +21,11 @@
     position:inherit;
     width: 30%;
     height: 100vh;
-    bottom: auto;
+    overflow: scroll;
+    margin: 0;
+  }
+  .sign-me-modal textarea {
+    resize: vertical;
   }
   .wrapper {
     float: left;
