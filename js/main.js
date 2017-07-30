@@ -1,25 +1,6 @@
 ;(function() {
-  var modalNode = document.getElementsByClassName('sign-me-modal')[0]
-  var openModal = () => {
-    modalNode.classList.add('sign-me-modal--open')
-  }
 
-  var closeModal = () => {
-    modalNode.classList.remove('sign-me-modal--open')
-  }
-
-  var openModalButton = document.getElementsByClassName('sign-me-modal__open-button')[0]
-  var closeModalButton = document.getElementsByClassName('sign-me-modal__close-button')[0]
-
-
-  openModalButton.addEventListener('click', function() {
-    openModal()
-  })
-
-  closeModalButton.addEventListener('click', function() {
-    closeModal()
-  })
-
+  // Firebase setup //
   var firebaseConfig = {
     apiKey: "AIzaSyAmOWeoxK07P0d17ESvw126PRJGi5NmuPs",
     authDomain: "train-strike.firebaseapp.com",
@@ -36,16 +17,54 @@
   var emails = data.ref('/emails')
 
 
-  submissions.push({
-    name: 'Eoin',
-    comment: 'God is great'
+  // Helpers //
+  var firstOfClass = function(className) {
+    var result = document.getElementsByClassName(className)
+    return result && result[0]
+  }
+
+  var openModal = function() {
+    nodes.modal.classList.add('sign-me-modal--open')
+  }
+
+  var closeModal = function() {
+    nodes.modal.classList.remove('sign-me-modal--open')
+  }
+
+  // DOM nodes //
+  var nodes = {
+    modal: firstOfClass('sign-me-modal'),
+    openModalButton: firstOfClass('sign-me-modal__open-button'),
+    closeModalButton: firstOfClass('sign-me-modal__close-button'),
+    form: firstOfClass('sign-me-modal__form')
+  }
+
+
+  // Events //
+  nodes.openModalButton.addEventListener('click', function() {
+    openModal()
   })
 
-  emails.push({
-    "email": '123@456'
+  nodes.closeModalButton.addEventListener('click', function() {
+    closeModal()
   })
 
-  submissions.on('value').then(function(snapshot) {
+  nodes.form.addEventListener('submit', function(e) {
+    e.preventDefault()
+
+    var name = e.target.name.value;
+    var email = e.target.email.value;
+    var comment = e.target.comment.value
+
+    submissions.push({
+      name: name,
+      comment: comment
+    })
+
+    emails.push(email)
+  })
+
+  submissions.on('value', function(snapshot) {
     console.log(snapshot.val());
   })
 
