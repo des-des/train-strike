@@ -1,0 +1,16 @@
+.train {
+  background-image: url('train.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0% 50%
+}
+
+.sign-me-modal {
+  position: fixed;
+  bottom: -100%;
+  transition: bottom 1s;
+}
+
+.sign-me-modal.sign-me-modal--open {
+  bottom: 0;
+}
