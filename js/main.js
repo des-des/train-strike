@@ -99,6 +99,29 @@ var trainStrike
     nodes.emailCount.textContent = count.toString() || 'many'
   }
 
+  var validateFormAndDisplayErrors = function(name, email) {
+    var nameInvalid = !name || name === ''
+    if (nameInvalid) {
+      nodes.formNameError.classList.remove('dn')
+      nodes.formNameError.classList.add('di')
+    }
+
+    var emailInvalid = !email || email === ''
+    if (emailInvalid) {
+      nodes.formEmailError.classList.remove('dn')
+      nodes.formEmailError.classList.add('di')
+    }
+
+    return !(nameInvalid || emailInvalid)
+  }
+
+  var hideFormErrors = function() {
+    nodes.formNameError.classList.remove('di')
+    nodes.formNameError.classList.add('dn')
+    nodes.formEmailError.classList.remove('di')
+    nodes.formEmailError.classList.add('dn')
+  }
+
   // DOM nodes //
   var nodes = {
     modal: firstOfClass('sign-me-modal'),
@@ -131,20 +154,10 @@ var trainStrike
     var email = e.target.email.value
     var comment = e.target.comment.value
 
-    var nameInvalid = !name || name === ''
-    if (nameInvalid) {
-      nodes.formNameError.classList.remove('dn')
-      nodes.formNameError.classList.add('di')
-    }
-
-    var emailInvalid = !email || email === ''
-    if (emailInvalid) {
-      nodes.formEmailError.classList.remove('dn')
-      nodes.formEmailError.classList.add('di')
-    }
-
-    if (nameInvalid || emailInvalid) {
-      return
+    if (!validateFormAndDisplayErrors(name, email)) {
+      return;
+    } else {
+      hideFormErrors()
     }
 
     submissions.push({
