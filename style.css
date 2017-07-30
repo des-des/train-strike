@@ -14,3 +14,20 @@
 .sign-me-modal.sign-me-modal--open {
   bottom: 0;
 }
+
+@media screen and (min-width: 60em) {
+  .sign-me-modal {
+    float: left;
+    position:inherit;
+    width: 30%;
+    height: 100vh;
+    bottom: auto;
+  }
+  .wrapper {
+    float: left;
+    width: 70%
+  }
+  .sign-me-modal__open-button {
+    display: none;
+  }
+}
