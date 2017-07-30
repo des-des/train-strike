@@ -36,6 +36,9 @@
 }
 
 @media screen and (min-width: 60em) {
+  .comments {
+    display: inline-block;
+  }
   .sign-me-modal {
     float: left;
     position:inherit;

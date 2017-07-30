@@ -50,8 +50,6 @@ var trainStrike
       node.classList.remove('comments__inner--hidden')
     }, 50)
 
-    console.log(node);
-
     var moveDown = function (dist) {
       var top = node.style.top
       var topNum = top
