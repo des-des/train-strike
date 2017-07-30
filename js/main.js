@@ -57,7 +57,9 @@ var trainStrike
     commentsText: firstOfClass('comments__text'),
     commentsAuthor: firstOfClass('comments__author'),
     commentsInner: firstOfClass('comments__inner'),
-    emailCount: firstOfClass('email-count')
+    emailCount: firstOfClass('email-count'),
+    formNameError: firstOfClass('sign-me-modal__form__name-error'),
+    formEmailError: firstOfClass('sign-me-modal__form__email-error')
   }
 
 
@@ -73,9 +75,25 @@ var trainStrike
   nodes.form.addEventListener('submit', function(e) {
     e.preventDefault()
 
-    var name = e.target.name.value;
-    var email = e.target.email.value;
+    var name = e.target.name.value
+    var email = e.target.email.value
     var comment = e.target.comment.value
+
+    var nameInvalid = !name || name === ''
+    if (nameInvalid) {
+      nodes.formNameError.classList.remove('dn')
+      nodes.formNameError.classList.add('di')
+    }
+
+    var emailInvalid = !email || email === ''
+    if (emailInvalid) {
+      nodes.formEmailError.classList.remove('dn')
+      nodes.formEmailError.classList.add('di')
+    }
+
+    if (nameInvalid || emailInvalid) {
+      return
+    }
 
     submissions.push({
       name: name,
@@ -84,7 +102,7 @@ var trainStrike
 
     emails.push(email)
 
-    nodes.form.reset();
+    nodes.form.reset()
     closeModal()
   })
 
