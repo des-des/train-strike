@@ -21,6 +21,7 @@
 
 .comments__inner--hidden {
   opacity: 0;
+  display: none;
 }
 
 .comments__text::after {
@@ -43,8 +44,9 @@
     float: left;
     position:inherit;
     width: 30%;
-    height: 100vh;
-    overflow: scroll;
+    height: 100%;
+    min-height: 100vh;
+    overflow: auto;
     margin: 0;
   }
   .sign-me-modal textarea {
