@@ -1,0 +1,14 @@
+{
+  "rules": {
+    ".write": true,
+    "submissions": {
+      ".read": true
+    },
+    "emails": {
+      ".read": false
+    },
+    "emails_count": {
+      ".read": true
+    }
+  }
+}
