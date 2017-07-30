@@ -42,8 +42,9 @@ var trainStrike
     firstOfClass('comments__author', node).textContent = nodeData.name
     firstOfClass('comments__text', node).textContent = nodeData.comment
     node.classList.add('comments__inner--hidden')
-    node.style.top = '0px'
+    node.style.top = '20px'
     nodes.comments.insertBefore(node, nodes.comments.firstChild)
+    self.node = node
 
     setTimeout(function() {
       node.classList.remove('comments__inner--hidden')
@@ -51,13 +52,13 @@ var trainStrike
 
     console.log(node);
 
-    var moveDown = function () {
+    var moveDown = function (dist) {
       var top = node.style.top
       var topNum = top
         ? parseInt(top.slice(0, top.indexOf('px')), 10)
         : 0
 
-      node.style.top = (topNum + 25) + 'px'
+      node.style.top = (topNum + dist) + 'px'
     }
     self.moveDown = moveDown
 
@@ -77,8 +78,10 @@ var trainStrike
     var nodes = []
 
     var addNode = function(nodeData) {
-      nodes.forEach(node => node.moveDown())
-      nodes.push(comment(nodeData))
+      var newNode = comment(nodeData)
+      console.log(newNode);
+      nodes.forEach(node => node.moveDown(newNode.node.clientHeight))
+      nodes.push(newNode)
       if (nodes.length >= 4) {
         nodes.shift().deleteSelf()
       }
