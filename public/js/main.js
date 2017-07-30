@@ -171,7 +171,7 @@ var trainStrike
     closeModal()
   })
 
-  submissions.limitToLast(1).on('child_added', function(snapshot) {
+  submissions.limitToLast(3).on('child_added', function(snapshot) {
     renderComment(snapshot.val())
   })
 
