@@ -1,6 +1,10 @@
 # Firebase
 .firebaserc
 
+# build output
+public/index.html
+public/css/style.css
+
 # Logs
 logs
 *.log
