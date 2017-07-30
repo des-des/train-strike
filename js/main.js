@@ -84,6 +84,7 @@ var trainStrike
 
     emails.push(email)
 
+    nodes.form.reset();
     closeModal()
   })
 
