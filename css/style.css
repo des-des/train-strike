@@ -19,6 +19,10 @@
   transition: all 0.5s ease-in-out;
 }
 
+.comments__inner--hidden {
+  opacity: 0;
+}
+
 .comments__text::after {
   content: close-quote;
 }

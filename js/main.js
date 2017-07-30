@@ -36,8 +36,12 @@ var trainStrike
   }
 
   var renderComment = function(data) {
-    nodes.commentsAuthor = data.name
-    comment.commentsText = data.comment
+    nodes.commentsInner.classList.add('comments__inner--hidden')
+    setTimeout(function() {
+      nodes.commentsAuthor.textContent = data.name
+      nodes.commentsText.textContent = data.comment
+      nodes.commentsInner.classList.remove('comments__inner--hidden')
+    }, 500)
   }
 
   // DOM nodes //
@@ -48,6 +52,7 @@ var trainStrike
     form: firstOfClass('sign-me-modal__form'),
     commentsText: firstOfClass('comments__text'),
     commentsAuthor: firstOfClass('comments__author'),
+    commentsInner: firstOfClass('comments__inner'),
   }
 
 
