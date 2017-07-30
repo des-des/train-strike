@@ -15,13 +15,8 @@
   bottom: 0;
 }
 
-.comments {
-  text-align: center;
-}
-
 .comments__inner {
   transition: all 0.5s ease-in-out;
-  position: absolute;
 }
 
 .comments__inner--hidden {
@@ -36,17 +31,14 @@
   content: open-quote;
 }
 
-.comments__author {
-  padding: 1rem;
-  font-weight: bold;
-  display: inline-block;
-}
-
 .comments__author::before {
   content: '- ';
 }
 
 @media screen and (min-width: 60em) {
+  .comments {
+    display: inline-block;
+  }
   .sign-me-modal {
     float: left;
     position:inherit;
