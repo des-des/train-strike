@@ -42,22 +42,24 @@
         <header class="fl w-100 pa3 tc bg-red white tracked mb3">
           <span class="ttu">Add your voice</span>
         </header>
-        <form>
+        <form class='sign-me-modal__form'>
           <div class="w-100 pa3">
-            <input type="text" placeholder="Name" class="w-100 pa3" />
+            <input name="name" type="text" placeholder="Name" class="w-100 pa3" />
           </div>
           <div class="w-100 pa3">
-            <input type="email" placeholder="Email address" class="w-100 pa3" />
+            <input name="email" type="email" placeholder="Email address" class="w-100 pa3" />
           </div>
           <div class="w-100 pa3">
-            <textarea placeholder="Add an optional message" class="w-100 pa3 helvetica" rows="3"></textarea>
+            <textarea name="comment" placeholder="Add an optional message" class="w-100 pa3 helvetica" rows="3"></textarea>
           </div>
           <div class="fl w-100 pa3 tc">
-            <a class="tracked f4 w-100 link dim br1 ph3 pv3 dib white bg-red ttu" href="#0">Submit</a>
+            <input type="submit" class="bw0 tracked f4 w-100 link dim br1 ph3 pv3 dib white bg-red ttu" href="#0"></input>
           </div>
         </form>
         <span class="ph3 f6 dib">We will never pass on your information. Take a look at our <a class="black link b hover-blue" href="privacy.html" target="_blank" title="View our privacy policy">privacy policy</a> for more details.</span>
       </div>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+    <script type="text/javascript" src='js/main.js'></script>
   </body>
 </html>
