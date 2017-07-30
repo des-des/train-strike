@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <title>Train Strike</title>
     <link rel="stylesheet" href="https://unpkg.com/tachyons@4.7.0/css/tachyons.min.css"/>
@@ -6,7 +7,7 @@
     <link rel="icon" type="image/png" href="favicon.png">
   </head>
   <body class="helvetica bg-light-gray">
-    <div class='overflow-hidden min-vh-100 bg-white'>
+    <div class="overflow-hidden min-vh-100 bg-white">
       <div class="fl w-100 w-70-l">
         <!-- Title -->
         <div class="fl w-100 pa3 tc bg-blue white tracked">
@@ -36,26 +37,28 @@
         </footer>
       </div>
 
-      <div class='sign-me-modal w-100 pb3 bg-light-gray'>
-        <img src='img/x.svg' class='absolute top-0 right-0 w1 h1 pa3 sign-me-modal__close-button'></img>
+      <div class="sign-me-modal w-100 pb3 bg-light-gray">
+        <img src="img/x.svg" title="Close the sign up form" class="absolute top-0 right-0 w1 h1 pa3 sign-me-modal__close-button" />
         <header class="fl w-100 pa3 tc bg-red white tracked mb3">
           <span class="ttu">Add your voice</span>
         </header>
-        <div class='w-100 pa3'>
-          <input type='text' placeholder="Name" class='w-100 pa3'/>
-        </div>
-        <div class='w-100 pa3'>
-          <input type='text' placeholder="Email address" class='w-100 pa3'/>
-        </div>
-        <div class='w-100 pa3'>
-          <textarea placeholder="Add an optional message" class='w-100 pa3 helvetica' rows='3'></textarea>
-        </div>
-        <div class="fl w-100 pa3 tc">
-          <a class="tracked f4 w-100 link dim br1 ph3 pv3 dib white bg-red ttu" href="#0">submit</a>
-        </div>
+        <form>
+          <div class="w-100 pa3">
+            <input type="text" placeholder="Name" class="w-100 pa3" />
+          </div>
+          <div class="w-100 pa3">
+            <input type="email" placeholder="Email address" class="w-100 pa3" />
+          </div>
+          <div class="w-100 pa3">
+            <textarea placeholder="Add an optional message" class="w-100 pa3 helvetica" rows="3"></textarea>
+          </div>
+          <div class="fl w-100 pa3 tc">
+            <a class="tracked f4 w-100 link dim br1 ph3 pv3 dib white bg-red ttu" href="#0">Submit</a>
+          </div>
+        </form>
         <span class="ph3 f6 dib">We will never pass on your information. Take a look at our <a class="black link b hover-blue" href="privacy.html" target="_blank" title="View our privacy policy">privacy policy</a> for more details.</span>
       </div>
     </div>
-    <script type="text/javascript" src='js/main.js'></script>
+    <script type="text/javascript" src="js/main.js"></script>
   </body>
 </html>
