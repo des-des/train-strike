@@ -2,6 +2,7 @@
   "rules": {
     ".write": true,
     "submissions": {
+      ".indexOn": "timestamp",
       ".read": true
     },
     "emails": {
