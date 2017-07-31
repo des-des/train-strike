@@ -5,7 +5,8 @@
   "main": "hapi_server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node build_css.js && html-inline -i src/index.html -o public/index.html -b public"
+    "build": "node build_css.js && html-inline -i src/index.html -o public/index.html -b public",
+    "deploy": "npm run build && firebase deploy"
   },
   "repository": {
     "type": "git",
