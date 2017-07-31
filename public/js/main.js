@@ -76,6 +76,7 @@ var trainStrike
     var nodes = []
 
     var addNode = function(nodeData) {
+      if (!nodeData.comment) return ;
       var newNode = comment(nodeData)
       nodes.forEach(node => node.moveDown(newNode.node.clientHeight))
       nodes.push(newNode)
@@ -171,7 +172,7 @@ var trainStrike
     closeModal()
   })
 
-  submissions.orderByChild('timestamp').limitToFirst(3).on('child_added', function(snapshot) {
+  submissions.orderByChild('timestamp').limitToLast(3).on('child_added', function(snapshot) {
     renderComment(snapshot.val())
   })
 
