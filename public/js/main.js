@@ -161,7 +161,8 @@ var trainStrike
 
     data.ref('/submissions/' + submissionId).set({
       name: name,
-      comment: comment
+      comment: comment,
+      timestamp: firebase.database.ServerValue.TIMESTAMP
     })
 
     data.ref('/emails/' + submissionId).set(email)
@@ -170,7 +171,7 @@ var trainStrike
     closeModal()
   })
 
-  submissions.limitToLast(3).on('child_added', function(snapshot) {
+  submissions.orderByChild('timestamp').limitToFirst(3).on('child_added', function(snapshot) {
     renderComment(snapshot.val())
   })
 
