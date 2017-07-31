@@ -15,9 +15,9 @@ Html should be fast, mobile first design.
   4. folder public should now hold static site
 
 ## To deploy
-  1. Set up a new project in firebase, copy your public API key into the file `main.js`.
+  1. Set up a new project on firebase, copy your public API key into the file `main.js`.
   2. Push public folder to static file server. (we have used firebase hosting service)
-  3. Deploy the functions and database rules to firebase
+  3. Deploy the functions and database rules to firebase.
 
 ##### Made with :heart: by @des-des and @lukem512
 ##### Contributions welcome :sparkles:
