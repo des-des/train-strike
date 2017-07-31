@@ -77,7 +77,6 @@ var trainStrike
 
     var addNode = function(nodeData) {
       var newNode = comment(nodeData)
-      console.log(newNode);
       nodes.forEach(node => node.moveDown(newNode.node.clientHeight))
       nodes.push(newNode)
       if (nodes.length >= 4) {
