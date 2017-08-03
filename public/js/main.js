@@ -29,10 +29,12 @@ var trainStrike
 
   var openModal = function() {
     nodes.modal.classList.add('sign-me-modal--open')
+    nodes.body.classList.add('body--no-scroll')
   }
 
   var closeModal = function() {
     nodes.modal.classList.remove('sign-me-modal--open')
+    nodes.body.classList.remove('body--no-scroll')
   }
 
   var comment = function(nodeData) {
@@ -122,6 +124,7 @@ var trainStrike
 
   // DOM nodes //
   var nodes = {
+    body: document.body,
     modal: firstOfClass('sign-me-modal'),
     openModalButton: firstOfClass('sign-me-modal__open-button'),
     closeModalButton: firstOfClass('sign-me-modal__close-button'),

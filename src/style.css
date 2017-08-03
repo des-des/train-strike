@@ -49,10 +49,15 @@
   background-position: 0% 50%
 }
 
+.body--no-scroll {
+  overflow: hidden;
+}
+
 .sign-me-modal {
   position: fixed;
   bottom: -100%;
   transition: bottom 1s;
+  max-height: 100vh;
 }
 
 .sign-me-modal.sign-me-modal--open {
@@ -90,6 +95,7 @@
     position:inherit;
     width: 30%;
     margin: 0;
+    overflow: visible;
   }
   .sign-me-modal textarea {
     resize: vertical;
