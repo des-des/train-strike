@@ -8,26 +8,29 @@
     <link rel="icon" type="image/png" href="favicon.png">
   </head>
   <body class="helvetica bg-light-gray">
-    <div class="overflow-hidden min-vh-100 bg-white">
+    <div class="overflow-hidden min-vh-100 bg-light-gray">
       <div class="fl w-100 w-70-l">
+        <header class='relative'>
         <!-- Title -->
-        <div class="fl w-100 pa3 tc bg-blue f2 f1-ns white tracked-mega">
-          <span class="ttu">Trainstrike</span>
-          <a href="https://github.com/des-des/train-strike">
-            <img src="img/gh.svg" class='w2 h2 ma2 fr'/>
-          </a>
-        </div>
+          <div class="fl w-100 f2 f1-ns black tracked-mega absolute tl fw6 white h3" style="background-color:rgba(0, 0, 0, 0.6);">
+            <span class="ttu dib pa1 pl4 shadow-2" style="text-shadow: 1px 1px 2px black;">Trainstrike</span>
 
-        <!-- Train image with overlaid signature counter -->
-        <!-- By My another account (talk) - Own work (Original text: I (My another account (talk)) created this work entirely by myself.), CC0, https://commons.wikimedia.org/w/index.php?curid=24073703 -->
-        <div class="fl w-100 bg-center cover" style="background-image: url(img/train.jpg); min-height: 12rem; height: 30%">
-          <div class="fl w-100 pa3 tc bg-light-gray o-90">
-            <span>Join the <span class="email-count link b">many</span> others that have signed up</span>
           </div>
-        </div>
+
+          <!-- Train image with overlaid signature counter -->
+          <!-- By My another account (talk) - Own work (Original text: I (My another account (talk)) created this work entirely by myself.), CC0, https://commons.wikimedia.org/w/index.php?curid=24073703 -->
+          <div class="w-100 bg-center cover" style="background-image: url(img/train_2.jpg); min-height: 12rem; height: 25rem">
+            <div class="fl w-100 tc o-90 bg-light-gray bottom-0 absolute">
+              <span class='dib pa3'>Join the <span class="email-count link b">many</span> others that have signed up</span>
+              <a href="https://github.com/des-des/train-strike">
+                <img src="img/gh.svg" class='w2 h2 fr pa2'/>
+              </a>
+            </div>
+          </div>
+        </header>
 
         <!-- Explanatory text -->
-        <div class="fl f4 w-100 pa3 lh-copy bg-white mb5 mb3 mb3-l">
+        <div class="fl f4 w-100 pa3 lh-copy bg-white mb5 mb0-l">
           <p>Trains in the UK are too expensive and it's no joke. <a class="gray b link shadow-hover hover-blue" title="Visit the BBC article on the rising train prices in the UK" href="http://www.bbc.co.uk/news/business-33968318" target="_blank">The average ticket price has risen each year since 1997</a>, often far exceeding the rate of inflation and rising three times faster than the average pay rise for the same period.</p>
 
           <p>It's time to <span class="b">take action</span>. It's time for the people to <span class="b">make their voices heard</span> and <span class="b">demand an end to the rising prices</span>. It's time to boycott the <a class="gray b link shadow-hover hover-blue" title="Visit the Wikipedia list of private railway operators in the UK" href="https://en.wikipedia.org/wiki/List_of_companies_operating_trains_in_the_United_Kingdom" target="_blank">private train networks in the United Kingdom</a>.</p>
@@ -45,8 +48,8 @@
         <a class="link" href="#" title="Close the sign up form">
           <img src="img/x.svg" class="absolute top-0 right-0 w1 h1 pa3 sign-me-modal__close-button" />
         </a>
-        <header class="fl w-100 pa3 tc bg-red white tracked mb3">
-          <span class="ttu">Add your voice</span>
+        <header class="fl w-100 pa3 tc bg-red white tracked mb3 h3-l">
+          <span class="ttu dib pt2-l">Add your voice</span>
         </header>
         <form class='sign-me-modal__form'>
           <span class="sign-me-modal__form__name-error pa3 f6 red dn">Please enter your name.</span>
@@ -63,7 +66,7 @@
           <span class="ph3 f6 dib">We will never pass on your information. Take a look at our <a class="black link b hover-blue" href="privacy.html" target="_blank" title="View our privacy policy">privacy policy</a> for more details.</span>
 
           <div class="fl w-100 pa3 tc">
-            <input type="submit" class="bw0 tracked f4 w-100 link dim br1 ph3 pv3 dib white bg-red ttu" href="#0"></input>
+            <input type="submit" class="bw0 tracked f4 w-100 link dim br1 ph3 pv3 dib white bg-red ttu" href="#0"/>
           </div>
         </form>
         <div class="comments relative pa3 ph4 tl dn w-100">

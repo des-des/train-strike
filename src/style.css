@@ -20,6 +20,7 @@
 @import 'tachyons/src/_max-widths';
 @import 'tachyons/src/_widths';
 @import 'tachyons/src/_overflow';
+@import 'tachyons/src/_opacity';
 @import 'tachyons/src/_position';
 @import 'tachyons/src/_skins';
 @import 'tachyons/src/_skins-pseudo';
@@ -88,9 +89,6 @@
     float: left;
     position:inherit;
     width: 30%;
-    height: 100%;
-    min-height: 100vh;
-    overflow: auto;
     margin: 0;
   }
   .sign-me-modal textarea {
